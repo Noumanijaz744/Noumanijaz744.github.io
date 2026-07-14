@@ -16,7 +16,7 @@ A responsive one-page academic website prepared for GitHub Pages.
 - `index.html`: website content
 - `styles.css`: layout, colors, responsive design, dark mode
 - `script.js`: mobile navigation, theme switcher, section animation
-- `assets/profile.jpg`: profile photograph from the supplied GitHub profile
+- `assets/profile.png`: profile photograph from the supplied GitHub profile
 - `assets/favicon.svg`: browser icon
 
 ## Add a CV later
