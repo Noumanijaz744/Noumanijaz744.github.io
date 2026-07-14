@@ -1,0 +1,4 @@
+Place the latest CV in this folder and name it:
+Nouman_Ijaz_CV.pdf
+
+Then enable the CV button using the instructions in README.md.
