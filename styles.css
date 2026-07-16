@@ -115,7 +115,12 @@ h1 {
 .metrics-grid span { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 
 .split-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(50px, 8vw, 120px); }
-h2 { margin: 0; font-size: clamp(38px, 5vw, 66px); line-height: 1.05; letter-spacing: -.055em; }
+h2 {
+  margin: 0;
+  font-size: clamp(34px, 4.3vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
 .prose { font-size: 18px; color: var(--muted); }
 .prose p:first-child { margin-top: 0; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
