@@ -244,3 +244,592 @@ h2 {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   PROFESSIONAL DESIGN OVERRIDES
+   Edit the values in this section to adjust the appearance.
+   ========================================================= */
+
+/* 1. Main color and font settings */
+:root {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --surface-2: #eef3f8;
+
+  --text: #1b2735;
+  --muted: #627083;
+  --line: #d9e1eb;
+
+  --accent: #2459a9;
+  --accent-hover: #194580;
+  --accent-2: #e1ebfa;
+
+  --dark: #11243f;
+  --dark-text: #f5f8fc;
+
+  --shadow:
+    0 20px 50px rgba(17, 36, 63, 0.10);
+
+  --radius: 20px;
+  --shell: min(1160px, calc(100% - 48px));
+
+  --font-body:
+    "Manrope",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  --font-display:
+    "Source Serif 4",
+    Georgia,
+    serif;
+}
+
+
+/* 2. Dark-mode colors */
+html[data-theme="dark"] {
+  --bg: #0f1722;
+  --surface: #172230;
+  --surface-2: #1d2a39;
+
+  --text: #edf2f8;
+  --muted: #aeb9c7;
+  --line: #334153;
+
+  --accent: #8fb8f7;
+  --accent-hover: #bad3fb;
+  --accent-2: #263c59;
+
+  --dark: #09121e;
+  --dark-text: #f5f8fc;
+
+  --shadow:
+    0 20px 55px rgba(0, 0, 0, 0.32);
+}
+
+
+/* 3. Main body typography */
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+}
+
+
+/* 4. Academic heading font */
+h1,
+h2,
+.research-card h3,
+.timeline-body h3,
+.pub-main h3,
+.project-card h3,
+.email-link {
+  font-family: var(--font-display);
+}
+
+
+/* 5. Navigation header */
+.site-header {
+  background: rgba(246, 248, 252, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+html[data-theme="dark"] .site-header {
+  background: rgba(15, 23, 34, 0.92);
+}
+
+.nav-wrap {
+  height: 74px;
+}
+
+.brand {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 800;
+}
+
+.site-nav a {
+  position: relative;
+  padding: 27px 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent);
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+  transform: scaleX(1);
+}
+
+
+/* 6. General section spacing */
+.section-pad {
+  padding: 96px 0;
+}
+
+
+/* 7. Hero section */
+.hero {
+  min-height: calc(100vh - 74px);
+  padding-top: 72px;
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(36, 89, 169, 0.10),
+      transparent 28%
+    );
+}
+
+.hero-grid {
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(310px, 0.75fr);
+
+  gap: clamp(52px, 8vw, 105px);
+}
+
+
+/* Small text above the main title */
+.eyebrow {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+
+/* 8. Main homepage title */
+/* Change 72px to make the desktop title larger or smaller. */
+h1 {
+  max-width: 760px;
+  font-size: clamp(43px, 5.6vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+
+/* 9. Text below the main title */
+/* Change 20px to control this paragraph size. */
+.hero-text {
+  max-width: 680px;
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.65;
+}
+
+
+/* 10. Homepage buttons */
+.hero-actions {
+  margin-top: 34px;
+}
+
+.button {
+  min-height: 48px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.button.primary:hover {
+  border-color: var(--accent-hover);
+  background: var(--accent-hover);
+}
+
+.button.secondary {
+  border-color: var(--line);
+  background: var(--surface);
+}
+
+.button.secondary:hover {
+  border-color: var(--accent);
+  background: var(--accent-2);
+  color: var(--accent);
+}
+
+
+/* 11. Social profile links */
+.social-row {
+  margin-top: 28px;
+}
+
+.social-row a {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.social-row a:hover {
+  color: var(--accent);
+}
+
+
+/* 12. Profile picture area */
+.portrait-wrap {
+  max-width: 390px;
+}
+
+.portrait-frame {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.portrait-frame img {
+  aspect-ratio: 1 / 1.07;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: none;
+}
+
+.portrait-note {
+  left: -24px;
+  bottom: 20px;
+  padding: 12px 15px;
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 11px;
+}
+
+
+/* 13. Numerical profile summary */
+.metrics-strip {
+  border-color: var(--line);
+  background: var(--surface);
+}
+
+.metrics-grid div {
+  min-height: 122px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 26px 30px;
+}
+
+.metrics-grid strong {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.metrics-grid span {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* 14. Main section headings */
+/* Change 54px to control the maximum section-heading size. */
+h2 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  line-height: 1.10;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+.section-number {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+
+/* 15. About-section paragraphs */
+.prose {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.prose p {
+  margin-bottom: 18px;
+}
+
+
+/* 16. Topic labels */
+.tag-list span,
+.project-stack span {
+  padding: 7px 11px;
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 10px;
+}
+
+
+/* 17. Research section background */
+.section-tint {
+  background: var(--surface-2);
+}
+
+
+/* 18. Research cards */
+.research-grid {
+  gap: 18px;
+  border: 0;
+}
+
+.research-card {
+  min-height: 350px;
+  padding: 38px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(17, 36, 63, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(36, 89, 169, 0.35);
+  box-shadow: var(--shadow);
+}
+
+.research-card h3 {
+  margin: 44px 0 14px;
+  font-size: clamp(25px, 2.7vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+.research-card p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.research-card li {
+  background: var(--accent-2);
+  color: var(--accent);
+  font-size: 10px;
+}
+
+
+/* 19. Education timeline */
+.timeline-item {
+  grid-template-columns: 150px 1fr;
+  padding: 38px 0;
+}
+
+.timeline-body h3 {
+  font-size: clamp(23px, 2.6vw, 31px);
+}
+
+.timeline-date {
+  font-size: 12px;
+}
+
+.timeline-body p {
+  font-size: 14px;
+}
+
+
+/* 20. Publications section */
+.section-dark {
+  background: var(--dark);
+}
+
+.publication {
+  grid-template-columns: 145px 1fr;
+  gap: 38px;
+  padding: 40px 0;
+}
+
+.pub-meta span:first-child {
+  color: #a7c7ff;
+  font-family: var(--font-display);
+  font-size: 27px;
+}
+
+.pub-meta span:last-child {
+  display: inline-block;
+  width: fit-content;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 9px;
+}
+
+.pub-main h3 {
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.24;
+  letter-spacing: -0.025em;
+}
+
+.pub-main p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pub-links a {
+  color: #b7d0ff;
+  font-size: 11px;
+}
+
+
+/* 21. Project cards */
+.project-grid {
+  gap: 18px;
+}
+
+.project-card {
+  padding: 36px;
+  border-color: var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(17, 36, 63, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.project-card h3 {
+  font-size: clamp(25px, 2.8vw, 36px);
+  line-height: 1.16;
+}
+
+.project-card p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* 22. Skills section */
+.skill-columns h3 {
+  font-size: 15px;
+}
+
+.skill-columns p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* 23. Recent updates */
+.news-list article {
+  padding: 24px 0;
+}
+
+.news-list time {
+  font-size: 12px;
+}
+
+.news-list p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* 24. Contact section */
+.contact {
+  background:
+    linear-gradient(
+      135deg,
+      #173b72,
+      #2459a9
+    );
+}
+
+.contact h2 {
+  color: #ffffff;
+  font-size: clamp(34px, 4vw, 52px);
+}
+
+.email-link {
+  font-size: clamp(19px, 2.2vw, 27px);
+}
+
+.contact-details p {
+  font-size: 13px;
+}
+
+
+/* 25. Mobile adjustments */
+@media (max-width: 640px) {
+  :root {
+    --shell: min(100% - 28px, 1160px);
+  }
+
+  .section-pad {
+    padding: 72px 0;
+  }
+
+  h1 {
+    font-size: clamp(38px, 11vw, 53px);
+  }
+
+  h2 {
+    font-size: clamp(31px, 9vw, 43px);
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .research-card,
+  .project-card {
+    padding: 27px;
+  }
+
+  .portrait-note {
+    left: 14px;
+  }
+
+  .site-nav a::after {
+    display: none;
+  }
+}
